@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Image Effect</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            font-size: 62.5%;
+        }
+
+        body {
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background-color: #e8e5e3;
+            width: 60%;
+            height: 65vh;
+            border-radius: 2rem;
+            box-shadow: 0 .7rem 3rem 0 rgba(128, 128, 128, 0.2);
+            position: relative;
+        }
+
+        .clip {
+            width: 100%;
+            height: 100%;
+            position: absolute;
+            top: 0;
+            left: 0;
+            border-radius: 2rem;
+            box-shadow: 0 .7rem 3rem 0 rgba(128, 128, 128, 0.2);
+            transition: all 0.3s linear;
+        }
+
+
+
+
+        /* ------center image------- */
+        .img1 {
+            background-image: url("./center_ai-generated-8543842_1280.jpg");
+            background-size: contain;
+            background-position: center;
+            clip-path: polygon(25% 0, 75% 0, 60% 100%, 40% 100%);
+        }
+
+        /* ------right image------- */
+        .img2 {
+            background-image: url("./right_ai-generated-8897458_1280.jpg");
+            background-size: contain;
+            background-position: right;
+            clip-path: polygon(75% 0, 100% 0, 100% 100%, 60% 100%);
+
+        }
+
+        /* ------left image------- */
+        .img3 {
+            background-image: url("./left_software-developer-6521720_1280.jpg");
+            background-size: contain;
+            background-position: left;
+            clip-path: polygon(0 0, 25% 0, 40% 100%, 0 100%);
+        }
+
+
+
+        /* -------hover effect------- */
+        .container:hover .clip {
+            clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+        }
+
+        .container .clip:hover {
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+            background-size: cover;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="clip img1"></div>
+        <div class="clip img2"></div>
+        <div class="clip img3"></div>
+    </div>
+</body>
+
+</html>
